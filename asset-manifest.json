@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Ice-cream-boat-tracker/static/css/main.323d7611.css",
-    "main.js": "/Ice-cream-boat-tracker/static/js/main.ed520f03.js",
+    "main.js": "/Ice-cream-boat-tracker/static/js/main.7ffa7618.js",
     "static/js/453.8aae3302.chunk.js": "/Ice-cream-boat-tracker/static/js/453.8aae3302.chunk.js",
     "index.html": "/Ice-cream-boat-tracker/index.html",
     "main.323d7611.css.map": "/Ice-cream-boat-tracker/static/css/main.323d7611.css.map",
-    "main.ed520f03.js.map": "/Ice-cream-boat-tracker/static/js/main.ed520f03.js.map",
+    "main.7ffa7618.js.map": "/Ice-cream-boat-tracker/static/js/main.7ffa7618.js.map",
     "453.8aae3302.chunk.js.map": "/Ice-cream-boat-tracker/static/js/453.8aae3302.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.323d7611.css",
-    "static/js/main.ed520f03.js"
+    "static/js/main.7ffa7618.js"
   ]
 }
