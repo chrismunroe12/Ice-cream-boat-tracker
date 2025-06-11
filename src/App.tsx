@@ -1,24 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { db } from "./firebaseConfig";
+import { ref, onValue } from "firebase/database";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+// Fix Leaflet marker icons in many setups (CDN workaround)
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+});
 
 function App() {
+  const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
+
+useEffect(() => {
+  const locationRef = ref(db, "boats/boat1/location");
+  onValue(locationRef, (snapshot) => {
+    const data = snapshot.val();
+    if (data?.latitude && data?.longitude) {
+      setLocation({ latitude: data.latitude, longitude: data.longitude });
+    }
+  });
+}, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{ height: "100vh", width: "100%" }}>
+      {location ? (
+        <MapContainer
+          center={[location.latitude, location.longitude]}
+          zoom={14}
+          style={{ height: "100%", width: "100%" }}
         >
-          Learn React
-        </a>
-      </header>
+          <TileLayer
+            attribution='&copy; OpenStreetMap contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[location.latitude, location.longitude]}>
+            <Popup>Ferry is here</Popup>
+          </Marker>
+        </MapContainer>
+      ) : (
+        <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading ferry location...</p>
+      )}
     </div>
   );
 }
