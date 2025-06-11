@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ferry-tracker-web/static/css/main.323d7611.css",
+    "main.js": "/ferry-tracker-web/static/js/main.14554095.js",
+    "static/js/453.8aae3302.chunk.js": "/ferry-tracker-web/static/js/453.8aae3302.chunk.js",
+    "index.html": "/ferry-tracker-web/index.html",
+    "main.323d7611.css.map": "/ferry-tracker-web/static/css/main.323d7611.css.map",
+    "main.14554095.js.map": "/ferry-tracker-web/static/js/main.14554095.js.map",
+    "453.8aae3302.chunk.js.map": "/ferry-tracker-web/static/js/453.8aae3302.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.323d7611.css",
+    "static/js/main.14554095.js"
+  ]
+}
