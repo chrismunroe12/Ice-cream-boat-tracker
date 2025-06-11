@@ -16,6 +16,14 @@ L.Icon.Default.mergeOptions({
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
+const iceCreamBoatIcon = new L.Icon({
+  iconUrl: process.env.PUBLIC_URL + "/ice-cream-boat.png",
+  iconSize: [50, 50],       // You can tweak these dimensions
+  iconAnchor: [25, 25],     // Adjust anchor so the boat “sits” right
+  popupAnchor: [0, -45],    // Where popup opens relative to icon
+});
+
+
 function App() {
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
 
@@ -39,15 +47,20 @@ useEffect(() => {
           style={{ height: "100%", width: "100%" }}
         >
           <TileLayer
-            attribution='&copy; OpenStreetMap contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='Map tiles by Stamen Design, CC BY 3.0 — Map data © OpenStreetMap'
+            url="https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png"
           />
-          <Marker position={[location.latitude, location.longitude]}>
-            <Popup>Ferry is here</Popup>
+
+          <Marker 
+            position={[location.latitude, location.longitude]} 
+            icon={iceCreamBoatIcon}
+          >
+            <Popup>Ice Cream Boat is here</Popup>
           </Marker>
+
         </MapContainer>
       ) : (
-        <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading ferry location...</p>
+        <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading ice cream boat location...</p>
       )}
     </div>
   );
