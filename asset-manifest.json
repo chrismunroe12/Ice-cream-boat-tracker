@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "//ice-cream-boat-tracker.github.io/static/css/main.323d7611.css",
-    "main.js": "//ice-cream-boat-tracker.github.io/static/js/main.b80734ab.js",
+    "main.js": "//ice-cream-boat-tracker.github.io/static/js/main.0a132851.js",
     "static/js/453.8aae3302.chunk.js": "//ice-cream-boat-tracker.github.io/static/js/453.8aae3302.chunk.js",
     "index.html": "//ice-cream-boat-tracker.github.io/index.html",
     "main.323d7611.css.map": "//ice-cream-boat-tracker.github.io/static/css/main.323d7611.css.map",
-    "main.b80734ab.js.map": "//ice-cream-boat-tracker.github.io/static/js/main.b80734ab.js.map",
+    "main.0a132851.js.map": "//ice-cream-boat-tracker.github.io/static/js/main.0a132851.js.map",
     "453.8aae3302.chunk.js.map": "//ice-cream-boat-tracker.github.io/static/js/453.8aae3302.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.323d7611.css",
-    "static/js/main.b80734ab.js"
+    "static/js/main.0a132851.js"
   ]
 }
